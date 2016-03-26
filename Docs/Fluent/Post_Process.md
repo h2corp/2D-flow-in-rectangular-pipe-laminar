@@ -36,7 +36,7 @@ In order to visualize the evolution of the velocity along the flow one should lo
 |x*w|+0.05
 
 
-Here `x` values are chosen to be 0.1, 0.5, 0.6, 0.9, 5, 10 and 50. These `x` values will help users to visualize the evolution of the velocity field within entrance length and across the pipe toward it's end. Furthermore, it shows the numerically predicted entrance length. It should be noted the first four values are chosen based on the prior experimental approximation of the entrance length, which for this problem is 0.09 [m].
+Here `x` values are chosen to be 0.1, 0.5, 0.6, 0.9, 5, 10 and 50. These `x` values will help users to visualize the evolution of the velocity field within entrance length and across the pipe toward it's end. Furthermore, it shows the numerically predicted entrance length. It should be noted the first four values are chosen based on the prior experimental approximation of the entrance length, which for this problem is 0.09 [m]. In order to plot the streamwise velocity variables at the defined stations along the length of the pipe use `plot/plot` command or `plot/XY Plot` in GUI and choose the variables of choice on each pre-defined downstream station to visualize the results. <Add the details of the step in future.>
 
 <img src="./Images/velocity_profiles.png" width="600">
 </br>
@@ -50,10 +50,12 @@ Where **Re<sub>w** is the Reynolds number of the pipe based on the pipe's width.
 
 **L<sub>e** **= 0.05** . **10** . **4.(0.1)/2(1+0.1)=0.09 [m]**
 
-As the final step for validation one can compare the numerically predicted fully developed velocity profile against the theoretically derived equation parabolic velocity profile. This step is also implemented in the pre-written python scrip.
+As the final step for validation one can compare the numerically predicted fully developed velocity profile against the theoretically derived equation parabolic velocity profile. To define the theoretical fully developed velocity profile use `define/custom-field-functions/define`, name your variable (i.e. theory_velocity) and put the following formula `1.5 * (1-((2*y-coordinate)/0.1)^2)`. In this formula 1.5 is the maximum centerline velocity as shown in the previous results. This will calculate the theoretical fully developed velocity profiles within the CFD domain.
 
-<img src="./Images/velocity_profiles_comparison.png" width="600">
+Now users can plot the numerically predicted streamwise velocity (X velocity) versus the calculated theoretical velocity at the 0.1w, 0.9w and 50w down stream stations. For plotting these results us `plot/plot` command or `plot/XY Plot` in GUI and choose the variables of choice on each pre-defined downstream station to visualize the results. <Add the steps of plotting in future>. Fig. 4 visualize the comparison between numerically predicted velocity profiles and theoretically calculated ones at various downstream stations. As shown in Fig.4 the functionality between these two velocities at downstream stations 0.9w and 50w, shown as black and red dots, are linear and the slope of this line is equal to one. This means that both velocity profiles completely match each other. However, within the entrance region this functionality, shown as green dots, is not linear anymore. This highlights the limitation of theoretical calculation to define velocity profile within the entrance length of the pipe.
 
-Figure 8 visualizes a comparison between the numerical and theoretical results for the fully developed velocity profiles at 25D downstream. As shown in this figure numerical results perfectly matches the theoretical results.
+<img src="./Images/velocity_profiles_comparison.png" width="500">
 
-At this stage one can conclude that this CFD numerical simulation is validated to study laminar flow in circular pipes. Therefore, it can be used for similar or more complex problems, such as flow with specified pressure gradient, non-uniform velocity profiles and etc.. This can be done via correct implementation in changing the corresponding boundary conditions.
+For a practice users are encourage to visualize the full theoretical and numerical velocity profiles to confirm the above-comparison. This can be done via `plot` command. Users first need to store the data at each station down stream to a file and then visualize them on top of each other. Give it a try!
+
+At this stage one can conclude that this CFD numerical simulation is validated to study 2D laminar flow in a rectangular pipe. Therefore, it can be used for similar or more complex problems, such as flow with specified pressure gradient, non-uniform velocity profiles and etc.. This can be done via correct implementation in changing the corresponding boundary conditions.
