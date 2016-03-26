@@ -4,7 +4,16 @@
 
 The CFD domain for the 2D laminar flow in a rectangular pipe is a finite two dimensional rectangle with a as shown in Fig.1. The dimensions of this pipe such as length and width are defined according to the problem definition. For this specific problem the ratio of length to with is chosen to be 50 (i.e. L = 5 [m] , W = 0.1 [m]). This ratio guarantees a CFD domain with reasonable number of of mesh elements. Furthermore, it will be long enough to simulate various aspects of the flow field as it evolves along the entrance length and becomes fully developed.
 
-To create the CFD domain geometry with the above mentioned dimensions, it is recommended to start with generating the points on the corners (i.e. four points) of the rectangular pipe and two helping midpoints along pipe's width as shown in Fig. 1.
+To create the CFD domain geometry with the above mentioned dimensions, it is recommended to start with generating the points on the corners (i.e. four points) of the rectangular pipe and two helping midpoints along pipe's width as shown in Fig. 1:
+
+|x|y|
+---|---|---
+Vertex 1|0|0
+Vertex 2|0|0.05
+Vertex 3|0|-0.05
+Vertex 4|5|0
+Vertex 5|5|0.05
+Vertex 6|5|-0.05
 
 <img src="./Images/CFD_domain_geometry_base_points.png" width="500">
 </br>
