@@ -12,7 +12,15 @@ This equation indicates that the material derivative of the velocity field (i.e.
 
 <img src="./Images/lex-smits-8.2.png" width="200">
 
-Once the flow enters the pipe due to the no slip boundary conditions at the walls of the pipe fluid velocity will instantly become zero. This results into a strong velocity gradient across the entrance length of the pipe and strongly effects the velocity field. This interaction between fluid element and solid walls forms a thin layer called Boundary Layer close to the walls of the pipe. In this region the flow field behavior is complex. Moving further downstream the two boundary layers merge with each other and the velocity gradient becomes smoother. The velocity profile get a parabolic shape and the flow becomes "fully developed". This short region is referred to as the "entrance region". The length of this region for laminar flows is experimentally related to the Reynolds number and hydraulic diameter of the rectangular pipe as explained [here](https://en.wikipedia.org/wiki/Entrance_length#Entry_Length).
+Once the flow enters the pipe due to the no slip boundary conditions at the walls of the pipe fluid velocity will instantly become zero. This results into a strong velocity gradient across the entrance length of the pipe and strongly effects the velocity field. This interaction between fluid element and solid walls forms a thin layer called Boundary Layer close to the walls of the pipe. In this region the flow field behavior is complex. Moving further downstream the two boundary layers merge with each other and the velocity gradient becomes smoother. The velocity profile get a parabolic shape and the flow becomes "fully developed". This short region is referred to as the "entrance region". The length of this region for laminar flows is experimentally related to the Reynolds number and hydraulic diameter of the rectangular pipe:
+
+**L<sub>e** **= 0.05** . **Re<sub>w** . **D<sub>h**
+
+Where **Re<sub>w** is the Reynolds number of the pipe based on the pipe's width. **D<sub>h** is the hydraulic diameter of the pipe considering unit depth defined as **D<sub>h** **=4 . A/P**. Here **A** and **P** are area and perimeter of the pipe's rectangular inlet. For this simulation:
+
+**L<sub>e** **= 0.05** . **10** . **4.(0.1)/2(1+0.1)=0.09 [m]**
+
+More physical explanation on the concept of entrance length is available [here](https://en.wikipedia.org/wiki/Entrance_length#Entry_Length).
 
 For a fully developed flow, it can be assumed that the pressure field variation in any directions other than the streamwise direction (i.e. x-direction in this problem) will become negligible. Furthermore, the change in the streamwise velocity is only significant across the pipe's cross section (i.e. y-direction) due to the no slip boundary conditions at the bottom and top of the pipe. With these assumptions the Navier-Stokes equation can be further reduced to:
 
