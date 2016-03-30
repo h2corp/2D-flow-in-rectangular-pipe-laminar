@@ -1,0 +1,7 @@
+Time = 10
+
+smoothSolver:  Solving for Ux, Initial residual = 4.06463e-11, Final residual = 4.06463e-11, No Iterations 0
+smoothSolver:  Solving for Uy, Initial residual = 5.39022e-10, Final residual = 4.10615e-11, No Iterations 2
+GAMG:  Solving for p, Initial residual = 1.02839e-10, Final residual = 2.33063e-11, No Iterations 1
+time step continuity errors : sum local = 2.15822e-12, global = 3.96334e-13, cumulative = -4.88409e-06
+ExecutionTime = 6.06 s  ClockTime = 7 s
